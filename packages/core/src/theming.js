@@ -1,9 +1,14 @@
 // @flow
 import * as React from 'react'
-import { ThemeContext } from '@emotion/core'
 import weakMemoize from '@emotion/weak-memoize'
 
-let getTheme = (outerTheme: Object, theme: Object | (Object => Object)) => {
+export const ThemeContext = React.createContext<Object>({})
+
+export function useTheme() {
+  return React.useContext(ThemeContext)
+}
+
+const getTheme = (outerTheme: Object, theme: Object | (Object => Object)) => {
   if (typeof theme === 'function') {
     const mergedTheme = theme(outerTheme)
     if (
@@ -36,12 +41,12 @@ let createCacheWithTheme = weakMemoize(outerTheme => {
   })
 })
 
-type Props = {
+type ThemeProviderProps = {
   theme: Object | (Object => Object),
   children: React.Node
 }
 
-let ThemeProvider = (props: Props) => {
+export const ThemeProvider = (props: ThemeProviderProps) => {
   let theme = React.useContext(ThemeContext)
 
   if (props.theme !== theme) {
@@ -53,5 +58,3 @@ let ThemeProvider = (props: Props) => {
     </ThemeContext.Provider>
   )
 }
-
-export default ThemeProvider

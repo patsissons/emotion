@@ -24,6 +24,8 @@ export {
   ObjectInterpolation
 } from '@emotion/css'
 
+export * from './theming'
+
 export { EmotionCache, Interpolation, SerializedStyles, css }
 
 export const ThemeContext: Context<object>

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import renderer from 'react-test-renderer'
-import { ThemeProvider } from 'emotion-theming'
-
+import { ThemeProvider } from '@emotion/core'
 import styled from '@emotion/native'
 import reactNative from 'react-native'
 

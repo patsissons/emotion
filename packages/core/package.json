@@ -24,7 +24,8 @@
     "@emotion/css": "^11.0.0-next.3",
     "@emotion/serialize": "^0.11.15-next.1",
     "@emotion/sheet": "0.9.3",
-    "@emotion/utils": "0.11.2"
+    "@emotion/utils": "0.11.2",
+    "@emotion/weak-memoize": "0.2.4"
   },
   "peerDependencies": {
     "@babel/core": "^7.0.0",
